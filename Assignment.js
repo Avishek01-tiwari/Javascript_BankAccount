@@ -1,4 +1,4 @@
-class BankAccount {
+class Bank {
     constructor(accountNumber, accountHolder) {
       this.accountNumber = accountNumber;
       this.accountHolder = accountHolder;
@@ -10,7 +10,7 @@ class BankAccount {
     deposit(amount) {
       if (amount > 0) {
         this.balance += amount;
-        this.recordTransaction("Deposit", amount);
+        this.Transactionhistory("Deposit", amount);
       } else {
         alert("Invalid Fund");
       }
@@ -20,7 +20,7 @@ class BankAccount {
     withdraw(amount) {
       if (amount > 0 && amount <= this.balance) {
         this.balance -= amount;
-        this.recordTransaction("Withdraw", amount);
+        this.Transactionhistory("Withdraw", amount);
       } else if (amount > this.balance) {
         alert("Insufficient funds");
       } else {
@@ -33,8 +33,8 @@ class BankAccount {
       if (amount > 0 && amount <= this.balance) {
         this.withdraw(amount);
         account2.deposit(amount);
-        this.recordTransaction("Transfer to " + account2.accountNumber, amount);
-        account2.recordTransaction("Transfer from" + this.accountNumber, amount);
+        this.Transactionhistory("Transfer to " + account2.accountNumber, amount);
+        account2.Transactionhistory("Transfer from" + this.accountNumber, amount);
         console.log(`${amount} transferred to ${account2.accountNumber}`);
       } else if (amount > this.balance) {
         alert("Insufficient funds for transfer");
@@ -48,7 +48,7 @@ class BankAccount {
       if (rate > 0) {
         let interest = this.balance * (rate / 100);
         this.balance += interest;
-        this.recordTransaction("Interest", interest);
+        this.Transactionhistory("Interest", interest);
         console.log(`${interest} of added to ${this.accountNumber}`);
       } else {
         alert("Invalid interest rate entered");
@@ -56,7 +56,7 @@ class BankAccount {
     }
   
     // to record a transaction
-    recordTransaction(type, amount) {
+    Transactionhistory(type, amount) {
       const date = new Date();
       this.trancation.push({ date, type, amount, balance: this.balance });
     }
@@ -72,8 +72,8 @@ class BankAccount {
   }
   
   //For Example: taking 2 accounts
-  const account1 = new BankAccount(12345, "Abhishek");
-  const account2 = new BankAccount(67890, "Paridhi");
+  const account1 = new Bank (12345, "Abhishek");
+  const account2 = new Bank (67890, "Paridhi");
   
   
   document.getElementById("Deposit-Button").onclick = function () {
