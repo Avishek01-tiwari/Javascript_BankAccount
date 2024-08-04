@@ -1,6 +1,6 @@
 BankAccount Class Implementation-
 
-This project implements a BankAccount class in JavaScript, simulating a basic banking system. The class includes functionalities such as deposit, withdrawal, transfer, and interest calculation. It also records all transactions for each account.
+This project implements a Bank class in JavaScript, simulating a basic banking system. The class includes functionalities such as deposit, withdrawal, transfer, and interest calculation. It also records all transactions for each account.
 
 Features-
 
@@ -39,7 +39,7 @@ Adds interest to the account balance based on the provided rate.
 Records the transaction with the type "Interest".
 Shows an alert if the rate is invalid.
 
-recordTransaction(type, amount):
+Transactionhistory(type, amount):
 Records a transaction with the specified type and amount, along with the current date and balance.
 
 getAccountDetails():
