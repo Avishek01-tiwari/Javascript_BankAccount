@@ -1,4 +1,4 @@
-BankAccount Class Implementation-
+Bank Class Implementation-
 
 This project implements a Bank class in JavaScript, simulating a basic banking system. The class includes functionalities such as deposit, withdrawal, transfer, and interest calculation. It also records all transactions for each account.
 
