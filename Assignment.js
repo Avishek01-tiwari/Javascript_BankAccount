@@ -21,6 +21,7 @@ class Bank {
       if (amount > 0 && amount <= this.balance) {
         this.balance -= amount;
         this.Transactionhistory("Withdraw", amount);
+        alert(`${amount} was withdrawn from ${account1.accountNumber} `);
       } else if (amount > this.balance) {
         alert("Insufficient funds");
       } else {
@@ -93,7 +94,6 @@ class Bank {
       return;
     } else {
       account1.withdraw(amount);
-      alert(`${amount} was withdrawn from ${account1.accountNumber} `);
     }
   };
   document.getElementById("Transfer-Button").onclick = function () {
